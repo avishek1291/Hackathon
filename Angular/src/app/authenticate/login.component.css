@@ -1,0 +1,27 @@
+body {
+    background-color: #525252;
+}
+.container{
+    height: 200px;
+}
+.centered-form {
+    margin-top: 60px;
+}
+
+.centered-form .panel {
+    background: rgba(255, 255, 255, 0.8);    
+}
+
+.panel {
+    border: 2px solid #dddddd;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel > .panel-heading {
+    background-image: none;
+    background-color: darkcyan;
+    color: white;
+
+}

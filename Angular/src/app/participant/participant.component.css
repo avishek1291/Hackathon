@@ -1,0 +1,29 @@
+#about{
+
+    background: url('/assets/sample.jpg') center center no-repeat;   
+    background-size:cover;
+}
+.about-text{
+background:rgba(49, 39, 39, 0);
+color:white;
+padding:60px;
+background-color: rgb(51, 43, 43);
+opacity:0.75;
+}
+section{
+    padding: 22px 0;
+}
+.rules{
+    
+
+    box-shadow: 0 0 12px 0px #286090;
+    background-color: #e2e9f0;
+    width: inherit;
+
+}
+.inner{
+    box-shadow: 0 0 15px black;
+}
+.news{
+    top: 0px;
+}

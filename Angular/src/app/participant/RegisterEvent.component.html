@@ -1,0 +1,27 @@
+
+
+    <body class="">
+
+    <form #formRef="ngForm" (ngSubmit)="addmember(formRef.value)">
+        <div class="form-group">
+         <label for="TeamName">Enter Team Name</label>
+          <input type="text" class="form-control" id="TeamName" name="TeamName" [(ngModel)]="TeamName">
+          
+          </div>
+        
+
+
+        <mat-card>
+            <mat-card-content>
+               
+            <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
+           
+            </mat-card-content>
+            
+        </mat-card>
+        <button class="btn btn-primary"  [disabled]="allowAdd">Add Team</button>
+        <div class="alert alert-warning" *ngIf="showWarning">Max team limit exceeded</div>
+    </form>
+    </body>
+
+

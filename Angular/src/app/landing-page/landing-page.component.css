@@ -1,0 +1,43 @@
+.fa-facebook {
+    background:blueviolet;
+    color: white;
+  }
+  .fa-twitter {
+    background: skyblue;
+    color: white;
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+   background:rgb(10, 5, 14);
+    color:rgb(49, 8, 83);
+    text-align: center;
+    opacity: 1;
+    text-decoration-color: black;
+    
+ }
+ footer.page-footer {
+    margin: 0;
+  }body {
+    padding-top: 232px; 
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+  .card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */  
+    max-width:  400px;
+    height:243px;
+    scrollbar-shadow-color: black;
+    box-shadow: 0 0 10px 4px black;
+
+}

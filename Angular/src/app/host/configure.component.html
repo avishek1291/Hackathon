@@ -1,0 +1,61 @@
+<form #f="ngForm" (ngSubmit)="Publish(f)">
+      
+      <div class="form-group">
+            <label for="EventName" >EventName</label>
+            <input class="form-control" [(ngModel)]="EventObj.EventName" name="EventName" required minlength="4" 
+                #firstName="ngModel" type="text" />
+      </div>
+                
+      <div class="form-group">
+            <label for="HostName" >HostName</label>
+            <input class="form-control" [(ngModel)]="EventObj.HostName" name="HostName" #comment="ngModel" readonly/>
+      </div>
+      
+      <div class="form-group">
+            <input  [matDatepicker]="picker1" placeholder="Choose StartDate"[(ngModel)]="EventObj.StartDate" name="StartDate">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+      </div>
+    
+      <div class="form-group">
+            <input  [matDatepicker]="picker2" placeholder="Choose EndDate" [(ngModel)]="EventObj.EndDate" name="EndDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+     </div>
+    
+      <div class="form-group">
+            <label for="Description" >Description</label>
+            <textarea class="form-control" [(ngModel)]="EventObj.Desc" name="Desc" #comment="ngModel"></textarea>
+      </div>
+
+      <div class="form-group">
+            <label for="teamLimit" >Team Size</label>
+            <input class="form-control" [(ngModel)]="EventObj.teamLimit" name="teamLimit" #comment="ngModel"/>
+      </div>
+
+      <div class="form-group">
+            <label for="Description" >winnerPrize</label>
+            <input class="form-control" [(ngModel)]="EventObj.winnerPrize" name="winnerPrize" #comment="ngModel"/>
+      </div>
+
+      <div class="form-group">
+            <label for="Evaluator">Evaluator Name</label>
+            <select  class="form-control" name="evaluatorName" [(ngModel)]="EventObj.evaluatorName">
+                  <option *ngFor="let evaluator of EvaluatorNames" [value]="evaluator.emailid">
+                    {{evaluator.firstname}} {{evaluator.lastname}}
+            </select>
+      </div>
+
+<!--
+      <div class="form-group">
+            <label for="file">Event File</label>
+            <input id="cin" name="cin" type="file" (change)="fileChangeEvent($event)" placeholder="Upload a file..." multiple/>
+            <button type="button" class="btn btn-success btn-s"(click)="upload()">
+                      <i class="glyphicon glyphicon-open-file"></i>
+                      &nbsp;Upload
+            </button>
+      </div>
+-->      
+      <button class="btn btn-info" [disabled]="!f.valid">Publish Event</button>
+</form>
+<span *ngIf="published"> <a [routerLink]="['/preview/',EventObj._id]" class="btn btn-xs btn-info">Preview</a></span>

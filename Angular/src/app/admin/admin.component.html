@@ -1,0 +1,21 @@
+<div class="grid" layout="horizontal" layout-align="center center">
+<br>
+<br>
+<br>
+<span> <a routerLink="/AddEvent" class="btn btn-xs btn-info">Add Event</a></span>
+      <mat-card class="cards" *ngFor="let item of data let i = index" [attr.data-index]="i">
+  
+        <mat-card-header>
+        
+         <mat-card-title><h3>EventName: {{ item.EventName }}</h3></mat-card-title>
+        </mat-card-header>
+  
+        <mat-card-content style="color:darkslateblue">
+          <div> Hostedby:{{item.HostName}}</div>
+        </mat-card-content>  
+  <mat-card-actions>
+    <button type="button" class="btn btn-danger" (click)="removeCard(i,item._id)"> delete</button>
+    <span> <a [routerLink]="['/updateCard',item._id]" class="btn btn-xs btn-info">Update</a></span>
+  </mat-card-actions>
+      </mat-card>
+    </div>

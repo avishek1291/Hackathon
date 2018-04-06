@@ -1,0 +1,21 @@
+<p>Host works!</p><div class="grid" layout="horizontal" layout-align="center center">
+  
+        <mat-card class="cards" *ngFor="let item of hostdata let i = index" [attr.data-index]="i">
+    
+          <mat-card-header>
+          
+           <mat-card-title><h3>EventName: {{ item.EventName }}</h3></mat-card-title>
+          </mat-card-header>
+    
+          <mat-card-content style="color:darkslateblue">
+            <div> Hostedby:{{item.HostName}}</div>
+          </mat-card-content>  
+    <mat-card-actions>
+      <button type="button" class="btn btn-danger" (click)="removeCard(item._id,i)"> delete</button>
+      
+      <span> <a [routerLink]="['/HostEvent/',item.HostName,+'configure',item._id]" class="btn btn-xs btn-info">Configure</a></span>
+    </mat-card-actions>
+        </mat-card>
+      </div>
+      <router-outlet></router-outlet>
+  

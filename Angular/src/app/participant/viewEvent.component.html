@@ -1,0 +1,58 @@
+<section id="about">
+    <div class="Section">
+      <div class="container">
+        <div class="col-md-6">
+          <div class="about-text">
+      <h3>About Challenge</h3>
+      <p class="lead">
+        {{EventObj.EventName }}
+      </p>
+      <p>
+         {{EventObj.Desc}}
+      </p>
+        <h5>Follow me in the web</h5>
+        <a href="" class="btn btn-info">twitter</a>
+        <a href="" class="btn btn-info">facebook</a>
+        <a href="" class="btn btn-info">you tube</a>
+         
+    </div>
+    <div *ngIf="!hasName"><a class="btn btn-info" [routerLink]="['/RegisterEvent/',EventObj._id]">RegisterForChallenge</a></div>
+    <a class="btn btn-success" (click)="StartChallenge()" *ngIf="hasName">StartChallenge</a>
+    
+    
+  </div></div></div>
+  </section>
+  
+  <section id="news">
+   <!-- <video autoplay muted loop id="myVideo">
+      <source src="https://coverr.co/s3/mp4/Workaholic.mp4" type="video/mp4">-->
+       
+  
+    <div class="rules">
+      
+  <h3>Rules</h3>
+        <p class="inner">
+            <b>Team size:</b>{{EventObj.teamLimit}}<br>
+            
+            <b>Prize</b>:{{EventObj.winnerPrize}}<br>
+            <b>Winner</b>:{{Winner}}<br>
+            <b>Rating</b>:{{Rating}}<br>
+            <b class="glyphicon glyphicon-calendar">StartDate:</b>{{EventObj.StartDate}}<br>
+            
+            <b class ="glyphicon glyphicon-calendar">EndDate</b> {{EventObj.EndDate}}
+  
+        </p>
+       
+        </div>
+
+        </section>
+        
+        <div *ngIf="showform">
+            <input id="cin" name="cin" type="file" (change)="fileChangeEvent($event)" placeholder="Upload a file..." multiple/>
+
+            <button type="button" class="btn btn-success btn-s"(click)="upload()">
+                <i class="glyphicon glyphicon-open-file"></i>&nbsp;Upload
+            </button>
+          </div>
+
+        

@@ -1,0 +1,17 @@
+<form #f="ngForm" (ngSubmit)="submit(f)" style="padding: 90px">
+    <div class="form-group">
+      <label for="EventName" >EventName</label>
+      <input ngModel name="EventName" required minlength="4" #firstName="ngModel" type="text" id="EventName" class="form-control" />
+    </div>
+    
+    <div class="form-group">
+      <label for="HostName" >HostName</label>
+      <select  class="form-control" name="HostName" [(ngModel)]="HostName">
+          <option *ngFor="let host of hostsNameValuePair" [value]="host.emailid">
+            {{host.firstname}} {{host.lastname}}
+      </select>
+    </div>
+
+    <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>
+{{hosts}}

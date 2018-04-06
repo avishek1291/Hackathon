@@ -1,0 +1,23 @@
+<p>Evaluate works!</p>
+<div class="grid" layout="horizontal" layout-align="center center">
+  
+  <mat-card class="cards" *ngFor="let item of evaluateEvents let i = index" [attr.data-index]="i">
+    <mat-card-header>
+      <mat-card-title><h3>EventName: {{ item.EventName }}</h3>
+        <h4>Hosted By:{{item.HostName}}</h4>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content style="color:darkslateblue">
+      <div> {{item.Desc}}</div>
+    </mat-card-content>  
+    <mat-card-actions>
+<!--      <button type="button" class="btn btn-danger" (click)="removeCard(i,item._id)"> delete</button>  -->
+      <span> 
+        <a [routerLink]="['/EvaluateHome/',item.evaluatorName,+'evaluate',item._id]" class="btn btn-xs btn-info">View Teams & Evaluate</a>
+      </span>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+<router-outlet></router-outlet>
+  

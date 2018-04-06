@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row centered-form">
+      <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4"> 
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Registered User Details</h3>
+          </div>
+          <div class="panel-body">
+<!--            <div class="col-xs-12">  -->
+              <form>
+                <div class="form-group row">
+                  <label for="firstname" class="col-sm-5 col-form-label">First Name</label>
+                  <div class="col-sm-7">
+                      <input type="text" name="firstname" [(ngModel)]="user.firstname" class="form-control input-sm" style="margin-top:10px;" readonly />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="lastname" class="col-sm-5 col-form-label">Last Name</label>
+                  <div class="col-sm-7">
+                    <input type="text" name="lastname" [(ngModel)]="user.lastname" class="form-control input-sm" style="margin-top:10px;" readonly />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="emailid" class="col-sm-5 col-form-label">Userid / Emailid</label>
+                  <div class="col-sm-7">
+                    <input type="text" name="emailid" [(ngModel)]="user.emailid" class="form-control input-sm" style="margin-top:10px;" readonly />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="contact" class="col-sm-5 col-form-label">Phone Number</label>
+                  <div class="col-sm-7">
+                    <input type="text" name="contact" [(ngModel)]="user.contact" class="form-control input-sm" style="margin-top:10px;" readonly />
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label for="role" class="col-sm-5 col-form-label">Role</label>
+                  <div class="col-sm-7">
+                    <input type="text" name="role" [(ngModel)]="user.role" class="form-control input-sm" style="margin-top:10px;" readonly />
+                  </div>
+                </div>
+                <button  class="btn btn-info btn-block" style="margin-top:10px;" (click)="goBack()">Back</button>
+              </form>
+<!--              </div>   -->
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>

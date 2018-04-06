@@ -1,0 +1,15 @@
+#about{
+
+    background: url('/assets/sample.jpg') center center no-repeat;   
+    background-size:cover;
+}
+.about-text{
+background:rgba(49, 39, 39, 0);
+color:white;
+padding:60px;
+background-color: rgb(51, 43, 43);
+opacity:0.75;
+}
+.teamcards{
+    max-width: 400px;
+}

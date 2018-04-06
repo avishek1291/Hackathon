@@ -1,0 +1,70 @@
+<div>
+      <mat-card class="Eventcard" >
+            <mat-card-header>
+                  <mat-card-title>
+                        <h3>EventName: {{ EventObj.EventName }}</h3>
+                        <h4>Hosted By:{{host.firstname}} {{host.lastname}}</h4>
+                  </mat-card-title>
+            </mat-card-header>
+            <mat-card-content style="color:darkslateblue">
+                  <div> {{EventObj.Desc}}</div>
+            </mat-card-content>  
+      </mat-card>
+</div>
+
+<div class="grid" layout="horizontal" layout-align="center center" *ngFor="let item of Teams let i = index" [attr.data-index]="i">
+
+      <mat-card class="teamcards" >
+            <mat-card-header>
+                  <mat-card-title>
+                        <h3>TeamName: {{ item.TeamName }}</h3>
+                  </mat-card-title>
+            </mat-card-header>
+            <b>Members:</b>
+            <div *ngFor="let participant of item.Participants let i=index">
+                  {{participant.firstname}} {{participant.lastname}}
+            </div>
+
+            <b>Download Submission</b>
+            <div *ngIf="item.FileName != null; else elseBlock">
+                  <button type="submit" class="btn btn-info" (click)="FileDownload(item.FileName)">{{ item.FileName }}</button>
+            </div>
+            <ng-template #elseBlock>
+                  <button type="submit" class="btn btn-info" style="color:rgb(139, 63, 0)">Not Submitted</button>
+            </ng-template>
+            <br>
+            
+            <mat-card-subtitle style="color:darkslateblue">
+                  <div class="form-group">
+                    <label for="uxrating">UX Rating</label>
+                        <select  name="uxrating" [(ngModel)]="item.UXRating">
+                              <option *ngFor="let rating of ratings" [value]="rating">
+                                    {{rating}}
+                        </select>
+                        <label for="functionrating">Function Rating</label>
+                        <select  name="functionrating" [(ngModel)]="item.FunctionRating">
+                              <option *ngFor="let rating of ratings" [value]="rating">
+                                    {{rating}}
+                        </select>   
+                  </div>
+            </mat-card-subtitle>
+
+            <mat-card-subtitle style="color:darkslateblue">
+                  <label for="comments">Comments</label>
+                  <input class="form-control" [(ngModel)]="item.Comments" name="Comments" #comment="ngModel"/>
+            </mat-card-subtitle>
+
+            <mat-card-subtitle style="color:darkslateblue">
+                  <div class="form-group">
+                        <label for="finalrating">Final Rating (Average of Individual Ratings)</label>
+                        <input class="form-control" [(ngModel)]="item.Rating" name="FinalRating" #comment="ngModel" readonly/>
+                  </div>
+            </mat-card-subtitle>
+
+            <mat-card-actions>
+                  <button type="submit" class="btn btn-info" (click)="SubmitRating(i,item)">Calculate & Submit Rating</button>
+            </mat-card-actions>
+            <div *ngIf="successRatingUpdate" style="color:darkgreen">Submission Evaluated...</div>
+            <div *ngIf="failureRatingUpdate" style="color:darkred">Evaluation failure - Internal server error!</div>
+      </mat-card>
+</div>

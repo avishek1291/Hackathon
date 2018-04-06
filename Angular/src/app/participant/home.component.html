@@ -1,0 +1,13 @@
+<div class="row" >
+        <div class="col-sm-6 col-md-4" *ngFor="let item of Events">
+         
+          <div class="thumbnail">
+            <img src="/assets/Ed_Avatar.png" alt="...">
+            <div class="caption">
+              <h3>{{item.EventName}}</h3>
+              <p>Hosted By:{{item.HostName}}</p>
+              <p><a [routerLink]="['/viewEvent/',item._id]" class="btn btn-xs btn-success">View details</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
