@@ -1,0 +1,2 @@
+# Hackathon
+Hackathon Event ManagementApp
